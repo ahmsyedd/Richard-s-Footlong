@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.LandingPageWAcc"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Load">
+
+    <Grid>
+        <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1920" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True" />
+        <Button x:Name="btnCreate" Content="Create Your Sandwich" Height="504" Width="762" HorizontalAlignment="Center" FontSize="28" Background="#FF13C781" Click="btnCreate_Click"/>
+        <Image x:Name="imgUser" HorizontalAlignment="Left" Height="100" Margin="1788,127,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/account_image.png" Tapped="imgUser_Tapped"/>
+        <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" Margin="1545,145,0,0" TextWrapping="Wrap" Text="Weclome {user}" VerticalAlignment="Top" FontSize="24" Width="238"/>
+
+    </Grid>
+</Page>

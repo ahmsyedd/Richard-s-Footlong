@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.OrderSummaryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1919" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+        <ListBox Margin="55,175,1197,340" Name="lstReceipt">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="10 0 0 0">
+                        <TextBlock Text="Base Items" FontWeight="Bold"></TextBlock>
+                        <StackPanel Margin="10 0 0 0" >
+                            <TextBlock>
+                                <Run Text="Meat - "></Run>
+                                <Run Text="{Binding MeatName}"></Run>
+                                <Run Text=": "></Run>
+                                <Run Text="{Binding Price}" ></Run>
+                                <Run Text="each "></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Bread - "></Run>
+                                <Run Text="{Binding BreadName}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Cheese - "></Run>
+                                <Run Text="{Binding Cheese}"></Run>
+
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Qty - "></Run>
+                                <Run Text="{Binding Quantity}"/>
+                            </TextBlock>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <TextBlock Text="Toppings" FontWeight="Bold"/>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Veggie}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <TextBlock Text="Sauces" FontWeight="Bold"/>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Sauce}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </StackPanel>
+
+                </DataTemplate>
+
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <Grid Margin="1043,160,179,325">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="76*"/>
+                <RowDefinition/>
+                <RowDefinition Height="23*"/>
+                <RowDefinition Height="162*"/>
+                <RowDefinition Height="333*"/>
+            </Grid.RowDefinitions>
+
+            <TextBox HorizontalAlignment="Center" TextWrapping="Wrap" Text="Order Summary" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" FontFamily="Berlin Sans FB Demi" Width="698" Background="#663CCA96" IsReadOnly="True"/>
+            <TextBox HorizontalAlignment="Left" Margin="4,16,0,0" TextWrapping="Wrap" Text="SubTotal" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Margin="4,151,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="3" Grid.RowSpan="2"/>
+            <TextBox HorizontalAlignment="Left" Margin="4,67,0,0" TextWrapping="Wrap" Text="Tax" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="3"/>
+            <TextBox x:Name="txtSubTotal" HorizontalAlignment="Left" Margin="385,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="2" Grid.RowSpan="2"/>
+            <TextBox x:Name="txtTotal" HorizontalAlignment="Left" Margin="385,153,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="3" Grid.RowSpan="2"/>
+            <TextBox x:Name="txtTax" HorizontalAlignment="Left" Margin="385,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="30" Width="310" IsReadOnly="True" Grid.Row="3"/>
+            <FlipView Grid.RowSpan="5" Margin="0,0,0,0"/>
+        </Grid>
+        <Button x:Name="btnSubmit" Content="Submit Order" Margin="1439,910,0,0" VerticalAlignment="Top" Height="92" Width="314" FontSize="28" Click="btnSubmit_Click"/>
+
+    </Grid>
+</Page>

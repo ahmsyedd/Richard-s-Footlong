@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.OrderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Canvas Margin="0,0,0,-15" Grid.RowSpan="2">
+            <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1920" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center" IsReadOnly="True"/>
+            <TextBox Canvas.Left="168" TextWrapping="Wrap" Text="Create Your Own Sandwich" Canvas.Top="140" Width="595" FontSize="48" FontFamily="Berlin Sans FB" HorizontalAlignment="Left" VerticalAlignment="Center" IsReadOnly="True" Background="#66FFF612" />
+            <Grid Height="765" Width="1291" Canvas.Left="168" Canvas.Top="210" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="166*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox HorizontalAlignment="Left" Margin="0,20,0,0" TextWrapping="Wrap" Text="Bread" VerticalAlignment="Top" IsReadOnly="True" Height="60" Width="240" FontSize="36" FontWeight="Bold" BorderBrush="#00000000"/>
+                <ComboBox Margin="250,20,0,0" Width="410" Height="60" FontSize="36" Grid.ColumnSpan="2" Name="cmbBread"></ComboBox>
+                <TextBox HorizontalAlignment="Left" Margin="0,100,0,0" TextWrapping="Wrap" Text="Meat Type" VerticalAlignment="Top" IsReadOnly="True" Height="60" Width="240" FontSize="36" FontWeight="Bold" BorderBrush="#00000000"/>
+                <ComboBox Margin="250,100,0,0" Width="410" Height="60" FontSize="36" Grid.ColumnSpan="2" Name="cmbMeat"></ComboBox>
+                <TextBox HorizontalAlignment="Left" Margin="0,180,0,0" TextWrapping="Wrap" Text="Cheeses" VerticalAlignment="Top" IsReadOnly="True" Height="60" Width="240" FontSize="36" FontWeight="Bold" BorderBrush="#00000000"/>
+                <ComboBox Margin="250,180,0,0" Width="410" Height="60" FontSize="36" Grid.ColumnSpan="2" Name="cmbCheese">
+                    <ComboBoxItem Content="Processed Cheddar" IsSelected="True"/>
+                    <ComboBoxItem Content="Shredded Monterey"/>
+                    <ComboBoxItem Content="Canadian Cheddar"/>
+                </ComboBox>
+                
+                <TextBox HorizontalAlignment="Left" Margin="0,260,0,0" TextWrapping="Wrap" Text="Veggies:" VerticalAlignment="Top" IsReadOnly="True" Height="60" Width="240" FontSize="36" FontWeight="Bold" BorderBrush="#00000000"/>
+                <CheckBox Name="chkLettuce" Content="Lettuce" Margin="20,345,0,0" VerticalAlignment="Top" FontSize="30"/>
+                <CheckBox Name="chkTomatoes" Content="Tomatoes" Margin="20,415,0,0" VerticalAlignment="Top" FontSize="30"/>
+                <CheckBox Name="chkCucumbers"  Content="Cucumbers" Margin="493,345,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+                <CheckBox Name="chkGreenPeppers" Content="Green Peppers" Margin="188,345,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+                <CheckBox Name="chkPickles" Content="Pickles" Margin="188,415,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+                <CheckBox Name="chkOlives" Content="Olives" Margin="350,415,0,0" VerticalAlignment="Top" FontSize="30" Grid.ColumnSpan="2"/>
+                <CheckBox Name="chkOnions" Content="Onions" Margin="350,345,0,0" VerticalAlignment="Top" FontSize="30" Grid.ColumnSpan="2"/>
+                <CheckBox Name="chkSpinach" Content="Spinach" Margin="493,415,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+
+                <TextBox HorizontalAlignment="Left" Margin="0,480,0,0" TextWrapping="Wrap" Text="Sauces:" VerticalAlignment="Top" IsReadOnly="True" Height="60" Width="240" FontSize="36" FontWeight="Bold" BorderBrush="#00000000"/>
+                <CheckBox Name="chkMayo" Content="Mayonnaise" Margin="20,550,0,0" VerticalAlignment="Top" FontSize="30"/>
+                <CheckBox Name="chkMustard" Content="Mustard" Margin="20,610,0,0" VerticalAlignment="Top" FontSize="30"/>
+                <CheckBox Name="chkCreamySrircha" Content="Creamy Sriracha" Margin="188,550,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+                <CheckBox Name="chkBBQ" Content="BBQ Sauce" Margin="188,610,0,0" VerticalAlignment="Top" FontSize="30" Grid.Column="1"/>
+                <CheckBox Name="chkTeriyaki" Content="Teriyaki Sauce" Margin="350,610,0,0" VerticalAlignment="Top" FontSize="30" Grid.ColumnSpan="2"/>
+                <CheckBox Name="chkGarlicAioli" Content="Garlic Aioli" Margin="350,550,0,0" VerticalAlignment="Top" FontSize="30" Grid.ColumnSpan="2"/>
+
+
+                <Button x:Name="btnAdd" Content="Add To Cart" Margin="330,690,0,0" VerticalAlignment="Top" FontSize="40" Background="#FF44B344" Width="356" Grid.ColumnSpan="2" Click="btnAdd_Click"/>
+                <Button Content="Reset" Margin="257,690,0,0" VerticalAlignment="Top" FontSize="40" Background="#FFDF4040" Width="356" Grid.Column="1" Name="btnReset" Click="btnReset_Click"/>
+                
+                <Button Content="-" Margin="0,690,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Height="66" Width="50" Name="btnMinus" Click="btnMinus_Click"/>
+                <Button Content="+" Margin="160,689,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Height="66" Width="50" HorizontalAlignment="Left" Name="btnAddit" Click="btnAddit_Click"/>
+                <TextBox HorizontalAlignment="Left" Margin="70,690,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Height="66" Width="70" FontSize="36" TextAlignment="Center" Name="txtQuant" IsReadOnly="True"/>
+
+            </Grid>
+            <Image Height="409" Canvas.Left="1469" Canvas.Top="173" Width="393" Source="/Assets/footlong.jpg"/>
+
+        </Canvas>
+        <HyperlinkButton x:Name="btnBack" Content="Go Back" Margin="10,105,0,0" VerticalAlignment="Top" Height="44" Width="137" Foreground="#FF147B3B" FontSize="18" Click="BtnBack_Click"/>
+    </Grid>
+</Page>

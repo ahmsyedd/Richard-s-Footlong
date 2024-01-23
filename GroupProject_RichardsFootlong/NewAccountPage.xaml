@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.NewAccountPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+    
+        <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1919" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+        <TextBox Canvas.Left="95" TextWrapping="Wrap" Text="New Account" Canvas.Top="140" Width="445" FontSize="48" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True" Background="#66FFF612" Margin="0,157,0,0" TextAlignment="Center" />
+        <TextBlock HorizontalAlignment="Left" Margin="738,326,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Height="44" Width="142" FontSize="24"/>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Center" Height="59" Margin="0,363,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="445"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" VerticalAlignment="Center" Width="445" Height="59"/>
+        <TextBlock HorizontalAlignment="Left" Margin="738,463,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Height="44" Width="142" FontSize="24"/>
+        <PasswordBox x:Name="txtCPassword" HorizontalAlignment="Center" Margin="0,656,0,0" VerticalAlignment="Top" Width="445" Height="59"/>
+        <TextBlock HorizontalAlignment="Left" Margin="738,619,0,0" TextWrapping="Wrap" Text="Confirm Password" VerticalAlignment="Top" Height="44" Width="265" FontSize="24"/>
+        <Button x:Name="btnSubmit" Content="Create" Height="44" Margin="738,775,0,0" VerticalAlignment="Top" Width="132" Background="#FF28A9F3" Click="btnSubmit_Click"/>
+        <HyperlinkButton x:Name="btnBack" Content="Go Back" Margin="10,105,0,0" VerticalAlignment="Top" Height="44" Width="137" Foreground="#FF147B3B" FontSize="18" Click="btnBack_Click"/>
+    </Grid>
+
+
+</Page>

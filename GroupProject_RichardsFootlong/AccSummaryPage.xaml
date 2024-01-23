@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.AccSummaryPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Load">
+
+    <Grid>
+        <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1920" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True" />
+        <Image x:Name="imgUser" HorizontalAlignment="Left" Height="100" Margin="1788,127,0,0" VerticalAlignment="Top" Width="100" Source="/Assets/account_image.png"/>
+        <HyperlinkButton x:Name="btnBack" Content="Go Back" Margin="10,105,0,0" VerticalAlignment="Top" Height="44" Width="137" Foreground="#FF147B3B" FontSize="18" Click="BtnBack_Click"/>
+        <HyperlinkButton x:Name="btnLogout" Content="Logout" Margin="1646,188,0,0" VerticalAlignment="Top" Height="44" Width="137" Foreground="#FF7B1456" FontSize="18" Click="btnLogout_Click"/>
+        <TextBox TextWrapping="Wrap" Text="Summary of Orders" Width="445" FontSize="48" FontFamily="Berlin Sans FB" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True" Background="#66FFF612" Margin="0,155,0,0" TextAlignment="Center" />
+        <TextBlock x:Name="txtUsername" HorizontalAlignment="Left" Margin="1545,145,0,0" TextWrapping="Wrap" Text="Weclome {user}" VerticalAlignment="Top" FontSize="24" Width="238"/>
+
+        <ListBox Margin="475,251,473,89" Name="lstAccSummary">
+            <ListBox.ItemTemplate>
+
+                <DataTemplate>
+                    <StackPanel Margin="10 0 0 0">
+                        <TextBlock></TextBlock>
+                        <StackPanel>
+                            <TextBlock Text="Base Items" FontWeight="bold"></TextBlock>
+                            <TextBlock>
+                                <Run Text="Meat - "></Run>
+                                <Run Text="{Binding MeatName}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Bread - "></Run>
+                                <Run Text="{Binding BreadName}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Cheese - "></Run>
+                                <Run Text="{Binding Cheese}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Qty - "></Run>
+                                <Run Text="{Binding Quantity}"></Run>
+                            </TextBlock>
+                            <TextBlock>
+                                <Run Text="Price - "></Run>
+                                <Run Text="{Binding Price}"></Run>
+                            </TextBlock>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <TextBlock Text="Toppings" FontWeight="bold"></TextBlock>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Veggie}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                        <TextBlock></TextBlock>
+                        <TextBlock Text="Sauces" FontWeight="Bold"></TextBlock>
+                        <StackPanel>
+                            <ListView ItemsSource="{Binding Sauce}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding}"></TextBlock>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+
+    </Grid>
+</Page>

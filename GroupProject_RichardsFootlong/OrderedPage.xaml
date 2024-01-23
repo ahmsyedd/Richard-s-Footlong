@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="GroupProject_RichardsFootlong.OrderedPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GroupProject_RichardsFootlong"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Height="78" TextWrapping="Wrap" Text="Order Has Been Submitted" VerticalAlignment="Top" Width="631" FontSize="48" Margin="660,488,0,0" FontWeight="Bold"/>
+        <TextBox Text="Richard’s Footlong" FontSize="72" FontFamily="Baskerville Old Face" Width="1919" TextAlignment="Center" Background="#FF28A9F3" TextWrapping="Wrap" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" IsReadOnly="True"/>
+        <HyperlinkButton x:Name="btnToLanding" Content="Go Back To Home Page" Margin="0,966,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="#FF145479" Width="273" FontSize="20" Click="btnNewAccount_Click"/>
+
+    </Grid>
+</Page>
